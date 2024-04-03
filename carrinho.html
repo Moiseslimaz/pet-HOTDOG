@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - HOT DOG | Pet Shop Online</title>
+    <link rel="stylesheet" href="carrinho.css">
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="cabecario-container">
+            <a href="index.html"><img id="logo" src="img-cabecario/LOGOsitePETs.PNG" alt="Logo"></a>
+            <div class="caixa">
+                <input type="text" value="&#128270;|   Procurar no HOT DOG" class="caixa-buscar" type="submit"></input>
+            </div>
+            <div class="cabecario-chat">
+                <img id="cabecario" src="img-cabecario/mensagem-de-texto.png" alt="Chat">Central de<br>atendimento
+            </div>
+            <div class="cabecario-car">
+                <a href="carrinho.html"><img id="carrinho" src="img-cabecario/carrinho-de-compras.png" alt="Carrinho"></a>
+            </div>
+        </div>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <nav>
+        <li id="r"><img id="img-lis" src="img-cabecario/LOGOsitePETs-removebg-preview.png" alt=""></li>
+        <ul id="nav">
+            <li><a href="index.html">🏠Home</a></li>
+            <li><a href="servicos.html">✂🧼Banho e Tosa</a></li>
+            <li><a href="veterinario.html">🩺Veterinario</a></li>
+            <li><a href="blog.html">🐠BlogPet</a></li>
+        </ul>
+    </nav>
+    <body>
+        <div class="shopping-container">
+            <div class="shopping-header">
+                <h2 id="nmz">🛒Carrinho de Compras🛒</h2>
+            </div>
+            <aside>
+                <div class="shopping-footer">
+                    <div class="busca-cep">
+                        <h1 id="CONSUTAR">🚛Calcular Frete:</h1>
+                        <label id="DGCP" for="cepInput"> CEP:</label>
+                        <input type="text" id="cepInput">
+                        <button id="BUSCAR" onclick="buscarEndereco()">Atualizar</button>
+                        <div id="endereco"></div>
+                        
+                    
+                        <script>
+                            function buscarEndereco() {
+                                var cep = document.getElementById('cepInput').value;
+                                var url = `https://viacep.com.br/ws/${cep}/json/`;
+                                
+                                fetch(url)
+                                .then(response => response.json())
+                                .then(data => {
+                                    if(data.erro) {
+                                        document.getElementById('endereco').innerText = "CEP não encontrado.";
+                                    } else {
+                                        var endereco = `CEP: ${data.cep}, ${data.logradouro}, ${data.bairro}, ${data.localidade}, ${data.uf}`;
+                                        document.getElementById('endereco').innerText = endereco;
+                                    }
+                                })
+                                .catch(error => console.error('Erro:', error));
+                            }
+                        </script>
+                    </div>
+                    <div>
+                        <h2>Resumo do Pedido</h2>
+                    </div>
+                    <div>
+                        <h4>Valor dos Produto  <samp class="vlr">R$ 48,76</samp></h4> 
+                    </div>
+                    <hr>
+                    <div id="dc-produto">
+                        <h4>Desconto Pordutos  <samp class="vlr">-R$ 8,70</samp></h4>
+                    </div>
+                    <hr>
+                    <h2>TOTAL                  <samp class="vlr">R$ 541,70</samp>
+                    </h2>
+                    <hr>
+                    <div class="cashback">
+                        <h2>💴Voçê recebe de volta</h2>
+                    </div>
+                    <div class="cashback">
+                        <h4>Cashback dos produtos    <samp class="vlr">R$ 2,95</samp></h4>
+                    </div>
+                </div>
+            </aside>
+            <div class="shopping-body">
+                <div class="shopping-item">
+                    <img class="imagen" src="ft-racao-gato/ft-2.jpg" alt=""srcset="">
+                    <div class="item entry">
+                        <span class="item-name">Ração Premier Ambientes Internos</span>
+                        <span class="item-description">Preço: R$201.90</span>
+                        <span class="item-desconto">Desconto: 15%</span>
+                    </div>
+                    <div>
+                        <button class="quantity">+</button>
+                        <span class="quantity-ammount">1</span>
+                        <button class="quantity">-</button>
+                    </div>
+                    <div class="value">
+                        <span>R$</span>
+                        <span>201.90</span>
+                    </div>
+                </div>
+                <div class="shopping-item">
+                    <img class="imagen" src="ft-variedades/ft-1.webp" alt=""srcset="">
+                    <div class="item entry">
+                        <span class="item-name">Cama Retangular Para Cães e Gatos</span>
+                        <span class="item-description">Preço: R$169.90</span>
+                        <span class="item-desconto">Desconto: 15%</span>
+                    </div>
+                    <div>
+                        <button class="quantity">+</button>
+                        <span class="quantity-ammount">1</span>
+                        <button class="quantity">-</button>
+                    </div>
+                    <div class="value">
+                        <span>R$</span>
+                        <span>169.90</span>
+                    </div>
+                </div>
+                <div class="shopping-item">
+                    <img class="imagen" src="ft-racao-cachorro/ft-1.jpg" srcset="" alt="">
+                    <div class="item entry">
+                        <span class="item-name">Ração Golden Power</span>
+                        <span class="item-description">Preço: R$169.90</span>
+                        <span class="item-desconto">Desconto: 15%</span>
+                    </div>
+                     <div>
+                         <button class="quantity">+</button>
+                         <span class="quantity-ammount">1</span>
+                         <button class="quantity">-</button>
+                     </div>
+                     <div class="value">
+                         <span>R$</span>
+                         <span>169.90</span>
+                     </div>
+                </div>
+            </div>   
+        </div>
+    </body>
+</html>
