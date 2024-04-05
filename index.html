@@ -184,20 +184,21 @@
     <button class="add-to-cart">Add Carrinho🛒</button>
 </div>
 <script>
-  function adicionarAoCarrinho(nomeProduto, precoProduto, imagemProduto) {
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function() {
+          const productItem = this.closest('.product-item');
+          const productName = productItem.querySelector('h2').textContent;
+          const productPrice = productItem.querySelector('.price-product').textContent;
+          const productImage = productItem.querySelector('img').src;
 
-      const itemId = Math.floor(Math.random() * 1000000); 
-
-      cart.push({
-          id: itemId,
-          name: nomeProduto,
-          price: precoProduto,
-          image: imagemProduto
+          adicionarAoCarrinho(productName, productPrice, productImage);
       });
+  });
 
-      localStorage.setItem('cart', JSON.stringify(cart));
-  }
+  window.onload = function() {
+      displayCart();
+      calcularTotal();
+  };
 </script>
 
 </body>
