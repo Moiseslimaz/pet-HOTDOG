@@ -13,7 +13,6 @@ function addToCart(event) {
     const productImage = product.querySelector('img').src;
     const productPrice = parseFloat(product.querySelector('p.price').innerText.replace('R$', '').trim());
   
-    // Cria um objeto para representar o produto
     const productData = {
       name: productName,
       image: productImage,
