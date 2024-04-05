@@ -7,6 +7,9 @@ header {
   left: 0;
   width: 100%;
   z-index: 100;
+  display: flex;
+    flex-direction: row; /* Ou column, dependendo da orientação desejada */
+    justify-content: space-between; 
 }
 
 .cabecario-container {
@@ -14,6 +17,11 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
+  display: flex;
+  display: flex;
+    flex-direction: row; /* Ou column, dependendo da orientação desejada */
+    justify-content: space-between; 
+
 }
 
 #logo {
@@ -40,6 +48,9 @@ header {
   width: 500px;
   height: 50px;
   margin-left: 15px;
+  display: flex;
+    flex-direction: row; /* Ou column, dependendo da orientação desejada */
+    justify-content: space-between;
 }
 
 .caixa-buscar:hover {
@@ -57,6 +68,9 @@ header {
   font-size: 19px;
   border-radius: 40px;
   transition: transform .8s ease;
+  display: flex;
+    flex-direction: row; /* Ou column, dependendo da orientação desejada */
+    justify-content: space-between;
 }
 
 .cabecario-container:hover img {
@@ -88,6 +102,8 @@ nav {
   display: flex;
   justify-content: center;
   height: 40px;
+  display: flex;
+    flex-direction: row; /* Ou column, dependendo da orientação desejada */
 }
 
 nav ul {
@@ -99,17 +115,26 @@ nav ul {
   text-align: center;
   margin-bottom: 100px;
   justify-content: center;
+  display: flex;
+    flex-direction: row; /* Ou column, dependendo da orientação desejada */
+    justify-content: space-between;
 }
 
 nav ul li {
   margin-right: 30px;
   display: inline;
   text-align: center;
+  display: flex;
+    flex-direction: row; /* Ou column, dependendo da orientação desejada */
+    justify-content: space-between;
 }
 
 nav ul li:last-child {
   margin-right: 0;
   text-align: center;
+  display: flex;
+    flex-direction: row; /* Ou column, dependendo da orientação desejada */
+    justify-content: space-between;
 }
 
 nav a {
@@ -142,6 +167,9 @@ nav a:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   transition: transform .8s ease;
   border-radius: 20px;
+  display: flex;
+    flex-direction: row; /* Ou column, dependendo da orientação desejada */
+    justify-content: space-between;
 }
 
 .image-gallery img:hover {
@@ -182,6 +210,9 @@ butto {
   text-align: center;
   justify-content: center;
   align-items: center;
+  display: flex;
+    flex-direction: row; /* Ou column, dependendo da orientação desejada */
+    justify-content: space-between;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap');
@@ -212,6 +243,7 @@ butto {
   border: 1px solid rgb(0, 0, 0);
   display: flex;
   justify-content: space-between;
+  
 }
 
 #nav {

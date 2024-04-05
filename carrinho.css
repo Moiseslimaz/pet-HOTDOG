@@ -75,6 +75,11 @@
     position: relative;
     top: 1px;
 }
+.caixa{
+    display: flex;
+    flex-direction: row; /* Ou column, dependendo da orientação desejada */
+    justify-content: space-between; 
+}
 
 .quantity-ammount {
     color: #666666;
