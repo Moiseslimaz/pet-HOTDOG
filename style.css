@@ -144,7 +144,7 @@ nav a:hover {
   border-radius: 20px;
 }
 
-.image-gallery:hover img {
+.image-gallery img:hover {
   transform: scale(1.1);
 }
 
