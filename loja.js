@@ -38,9 +38,6 @@ function displayCart() {
   }
 }
 
-let cupomUsado = false;
-
-
 function addToCart(event) {
   const product = event.target.parentNode;
   const productName = product.querySelector('h2').innerText;
@@ -58,10 +55,21 @@ function addToCart(event) {
   cart.push(productData);
 
   localStorage.setItem('cart', JSON.stringify(cart));
+
+  // Adiciona event listener ao botão de compra recém-adicionado
+  const buyButton = event.target;
+  buyButton.removeEventListener('click', addToCart);
+  buyButton.addEventListener('click', removeFromCart);
 }
 
-const buyButtons = document.querySelectorAll('.add-to-cart');
+function removeFromCart(event) {
+  const product = event.target.parentNode;
+  // Adicione aqui a lógica para remover o item do carrinho
+}
 
-buyButtons.forEach(button => {
+// Remove a declaração inicial e apenas declara a variável uma vez
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+addToCartButtons.forEach(button => {
   button.addEventListener('click', addToCart);
 });
