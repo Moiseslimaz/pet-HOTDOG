@@ -39,7 +39,7 @@
             <li><a href="blog.html">🐠BlogPet</a></li>
         </ul>
     </nav>
-    <body>
+    <div>
         <div class="shopping-container">
             <div class="shopping-header">
                 <h2 id="nmz">🛒Carrinho de Compras🛒</h2>
@@ -95,59 +95,53 @@
                     </div>
                 </div>
             </aside>
-            <div class="shopping-body">
-                <div class="shopping-item">
-                    <img class="imagen" src="ft-racao-gato/ft-2.jpg" alt=""srcset="">
-                    <div class="item entry">
-                        <span class="item-name">Ração Premier Ambientes Internos</span>
-                        <span class="item-description">Preço: R$201.90</span>
-                        <span class="item-desconto">Desconto: 15%</span>
-                    </div>
-                    <div>
-                        <button class="quantity">+</button>
-                        <span class="quantity-ammount">1</span>
-                        <button class="quantity">-</button>
-                    </div>
-                    <div class="value">
-                        <span>R$</span>
-                        <span>201.90</span>
-                    </div>
-                </div>
-                <div class="shopping-item">
-                    <img class="imagen" src="ft-variedades/ft-1.webp" alt=""srcset="">
-                    <div class="item entry">
-                        <span class="item-name">Cama Retangular Para Cães e Gatos</span>
-                        <span class="item-description">Preço: R$169.90</span>
-                        <span class="item-desconto">Desconto: 15%</span>
-                    </div>
-                    <div>
-                        <button class="quantity">+</button>
-                        <span class="quantity-ammount">1</span>
-                        <button class="quantity">-</button>
-                    </div>
-                    <div class="value">
-                        <span>R$</span>
-                        <span>169.90</span>
-                    </div>
-                </div>
-                <div class="shopping-item">
-                    <img class="imagen" src="ft-racao-cachorro/ft-1.jpg" srcset="" alt="">
-                    <div class="item entry">
-                        <span class="item-name">Ração Golden Power</span>
-                        <span class="item-description">Preço: R$169.90</span>
-                        <span class="item-desconto">Desconto: 15%</span>
-                    </div>
-                     <div>
-                         <button class="quantity">+</button>
-                         <span class="quantity-ammount">1</span>
-                         <button class="quantity">-</button>
-                     </div>
-                     <div class="value">
-                         <span>R$</span>
-                         <span>169.90</span>
-                     </div>
-                </div>
-            </div>   
-        </div>
-    </body>
+            </div>    
+            
+        </div> 
+        <ul id="cart"></ul>
+
+
+
+<script src="loja.js"></script>
+<script>
+// Função para exibir os itens do carrinho na página do carrinho
+function displayCart() {
+  const cart = JSON.parse(localStorage.getItem('cart'));
+  const cartList = document.getElementById('cart');
+
+  // Limpa o conteúdo atual do carrinho
+  cartList.innerHTML = '';
+
+  // Verifica se há itens no carrinho
+  if (cart && cart.length > 0) {
+    // Loop através de cada item do carrinho e adiciona à lista
+    cart.forEach(item => {
+      const cartItem = document.createElement('li');
+
+      const itemImage = document.createElement('img');
+      itemImage.src = item.image;
+      itemImage.alt = item.name;
+      cartItem.appendChild(itemImage);
+
+      const itemName = document.createElement('p');
+      itemName.textContent = item.name;
+      cartItem.appendChild(itemName);
+
+      const itemPrice = document.createElement('p');
+      itemPrice.textContent = item.price;
+      cartItem.appendChild(itemPrice);
+
+      cartList.appendChild(cartItem);
+    });
+  } else {
+    // Se o carrinho estiver vazio, exibe uma mensagem
+    cartList.innerHTML = '<p>Carrinho vazio</p>';
+  }
+}
+
+// Chama a função para exibir os itens do carrinho ao carregar a página
+window.onload = displayCart;
+</script>
+ </body>
+    
 </html>
